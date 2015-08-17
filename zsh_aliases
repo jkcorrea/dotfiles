@@ -1,0 +1,35 @@
+alias open='nautilus --no-desktop . &'
+alias emacs='emacs -nw'
+alias es='sudo /usr/local/elasticsearch/bin/elasticsearch -d'
+alias pycors='python ~/Dropbox/Dev/SimpleCORSServer.py'
+alias csd='cap staging deploy'
+alias cpd='cap production deploy'
+alias rdm='rake db:migrate'
+alias gpl='git pull'
+alias gpom='git pull origin master'
+
+# Location aliases
+alias elections="cd ~/Dropbox/Work/StuGov/elections"
+alias sg="cd ~/Dropbox/Work/StuGov"
+alias bt="cd ~/Dropbox/Work/StuGov/budgettracker"
+alias si="cd ~/Dropbox/Work/StuGov/stu-inits"
+alias sm="cd ~/Dropbox/Work/StuGov/bridgeapi/ShinyMetalAPI"
+alias 272="cd ~/Dropbox/School/Old/67272"
+
+# Misc aliases
+alias ka="killall -9 $"
+alias hk="heroku"
+alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias rmdbc="find ./ -path \"*(*'s conflicted copy *\" -exec mv -v {} ~/.local/share/Trash/ \;"
+
+# Test PR branch
+gpr () {
+  git fetch upstream pull/$1/head:pr-$1 && git checkout pr-$1;
+}
+
+# Kill all processes matching
+kl () {
+  kill `ps aux | grep "[${1:0:1}]${1:1}" | awk '{print $2}'`
+}
+
