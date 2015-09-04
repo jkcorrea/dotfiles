@@ -15,6 +15,7 @@ alias bt="cd ~/Dropbox/Work/StuGov/budgettracker"
 alias si="cd ~/Dropbox/Work/StuGov/stu-inits"
 alias sm="cd ~/Dropbox/Work/StuGov/bridgeapi/ShinyMetalAPI"
 alias 272="cd ~/Dropbox/School/Old/67272"
+alias 475="cd ~/Dropbox/School/67475"
 
 # Misc aliases
 alias ka="killall -9 $"
