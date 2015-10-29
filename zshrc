@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="zhann"
-plugins=(git cp ruby bundler capistrano gem rvm rake themes node)
+plugins=(git cp ruby rvm rake themes node)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
