@@ -7,6 +7,7 @@ alias cpd='cap production deploy'
 alias rdm='rake db:migrate'
 alias gpl='git pull'
 alias gpom='git pull origin master'
+alias gdt='git difftool'
 
 # Location aliases
 alias elections="cd ~/Dropbox/Work/StuGov/elections"
