@@ -5,7 +5,7 @@
 	default = simple
 [core]
 	excludesfile = /home/jkcorrea/.gitignore_global
-  editor = subl -n -w
+	editor = subl -n -w
 [merge]
   tool = sublimerge
 [mergetool "sublimerge"]
