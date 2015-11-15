@@ -9,4 +9,4 @@ source ~/.zsh_aliases
 
 [ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin:/etc/android-studio/bin" # Add RVM to PATH for scripting
