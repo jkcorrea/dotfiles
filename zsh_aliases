@@ -1,4 +1,4 @@
-alias o='nemo'
+alias open='nautilus --no-desktop . &'
 alias emacs='emacs -nw'
 alias es='sudo /usr/local/elasticsearch/bin/elasticsearch -d'
 alias pycors='python ~/Dropbox/Dev/SimpleCORSServer.py'
