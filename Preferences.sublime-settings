@@ -1,4 +1,5 @@
 {
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
@@ -34,6 +35,7 @@
 		"CVS",
 		".sass-cache"
 	],
+	"font_face": "Input Sans Condensed",
 	"font_size": 9,
 	"highlight_line": true,
 	"ignored_packages":

@@ -8,16 +8,18 @@ alias rdm='rake db:migrate'
 alias gpl='git pull'
 alias gpom='git pull origin master'
 alias gdt='git difftool'
+alias stugov='ssh jkcorrea@stugov.andrew.cmu.edu'
+alias 272ag='ssh root@162.243.95.143'
+alias 272dk='ssh spock@darkknight.hss.cmu.edu'
 
 # Location aliases
-alias elections="cd ~/Dropbox/Work/StuGov/elections"
+alias elections="cd ~/Dropbox/StuGov/elections"
 alias sg="cd ~/Dropbox/StuGov"
 alias bt="cd ~/Dropbox/StuGov/budgettracker"
 alias si="cd ~/Dropbox/StuGov/stu-inits"
 alias sm="cd ~/Dropbox/StuGov/bridgeapi/ShinyMetalAPI"
-alias 272="cd ~/Dropbox/School/Old/67272"
-alias 475="cd ~/Dropbox/School/67475"
-alias botb="cd ~/Dropbox/BotB"
+alias 272="cd ~/Dropbox/School/67272"
+alias 272o="cd ~/Dropbox/School/Old/67272"
 
 # Misc aliases
 alias ka="killall -9 $"

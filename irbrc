@@ -11,7 +11,7 @@ puts "loading..."
 
 # Make gems available
 require 'rubygems'
- 
+
 # Awesome Print method (https://github.com/michaeldv/awesome_print)
 #require 'awesome_print'
 
@@ -34,49 +34,49 @@ require 'time'
 alias q exit
 
 
-ANSI = {}
-ANSI[:RESET]     = "\e[0m"
-ANSI[:BOLD]      = "\e[1m"
-ANSI[:UNDERLINE] = "\e[4m"
-ANSI[:LGRAY]     = "\e[0;37m"
-ANSI[:GRAY]      = "\e[0;90m"
-ANSI[:RED]       = "\e[31m"
-ANSI[:GREEN]     = "\e[32m"
-ANSI[:YELLOW]    = "\e[33m"
-ANSI[:BLUE]      = "\e[34m"
-ANSI[:MAGENTA]   = "\e[35m"
-ANSI[:CYAN]      = "\e[36m"
-ANSI[:WHITE]     = "\e[37m"
+MY_ANSI = {}
+MY_ANSI[:RESET]     = "\e[0m"
+MY_ANSI[:BOLD]      = "\e[1m"
+MY_ANSI[:UNDERLINE] = "\e[4m"
+MY_ANSI[:LGRAY]     = "\e[0;37m"
+MY_ANSI[:GRAY]      = "\e[0;90m"
+MY_ANSI[:RED]       = "\e[31m"
+MY_ANSI[:GREEN]     = "\e[32m"
+MY_ANSI[:YELLOW]    = "\e[33m"
+MY_ANSI[:BLUE]      = "\e[34m"
+MY_ANSI[:MAGENTA]   = "\e[35m"
+MY_ANSI[:CYAN]      = "\e[36m"
+MY_ANSI[:WHITE]     = "\e[37m"
 
 # Build a simple colorful IRB prompt
 IRB.conf[:PROMPT][:SIMPLE_COLOR] = {
-  :PROMPT_I => "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",
-  :PROMPT_N => "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",
-  :PROMPT_C => "#{ANSI[:RED]}?>#{ANSI[:RESET]} ",
-  :PROMPT_S => "#{ANSI[:YELLOW]}?>#{ANSI[:RESET]} ",
-  :RETURN   => "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n",
+  :PROMPT_I => "#{MY_ANSI[:BLUE]}>>#{MY_ANSI[:RESET]} ",
+  :PROMPT_N => "#{MY_ANSI[:BLUE]}>>#{MY_ANSI[:RESET]} ",
+  :PROMPT_C => "#{MY_ANSI[:RED]}?>#{MY_ANSI[:RESET]} ",
+  :PROMPT_S => "#{MY_ANSI[:YELLOW]}?>#{MY_ANSI[:RESET]} ",
+  :RETURN   => "#{MY_ANSI[:GREEN]}=>#{MY_ANSI[:RESET]} %s\n",
   :AUTO_INDENT => true }
-  
+
 # # Dr Nic's gem to find what methods yield the desired result
 # # http://drnicwilliams.com/2006/10/12/my-irbrc-for-consoleirb/
 # require 'what_methods'
-# 
+#
 # # Add in Dr. Nic's map_by_method while we're at it
 # # http://drnicutilities.rubyforge.org/map_by_method/
 # require 'map_by_method'
 
 # Load the readline module.
 IRB.conf[:USE_READLINE] = true
- 
+
 # Replace the irb(main):001:0 with a simple >>
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
- 
+
 # Tab completion
 require 'irb/completion'
- 
+
 # Automatic indentation
 IRB.conf[:AUTO_INDENT]=true
- 
+
 # Save History between irb sessions
 require 'irb/ext/save-history'
 IRB.conf[:SAVE_HISTORY] = 100
@@ -89,14 +89,14 @@ def extend_console(name, care = true, required = true)
   if care
     require name if required
     yield if block_given?
-    $console_extensions << "#{ANSI[:GREEN]}#{name}#{ANSI[:RESET]}"
+    $console_extensions << "#{MY_ANSI[:GREEN]}#{name}#{MY_ANSI[:RESET]}"
   else
-    $console_extensions << "#{ANSI[:GRAY]}#{name}#{ANSI[:RESET]}"
+    $console_extensions << "#{MY_ANSI[:GRAY]}#{name}#{MY_ANSI[:RESET]}"
   end
 rescue LoadError
-  $console_extensions << "#{ANSI[:RED]}#{name}#{ANSI[:RESET]}"
+  $console_extensions << "#{MY_ANSI[:RED]}#{name}#{MY_ANSI[:RESET]}"
 end
-$console_extensions = [] 
+$console_extensions = []
 
 # Wirble is a set of enhancements for irb
 # http://pablotron.org/software/wirble/README
@@ -112,9 +112,9 @@ end
 extend_console 'wirb' do
   Wirb.start
 end
- 
 
-# Hirb is a mini view framework for console applications, designed 
+
+# Hirb is a mini view framework for console applications, designed
 # to make formatting of ActiveRecord objects easier on the eyes
 # http://tagaholic.me/2009/03/13/hirb-irb-on-the-good-stuff.html
 extend_console 'hirb' do
@@ -135,7 +135,7 @@ end
 # end
 
 # The above trick doesn't work in Rails 3, but this does...
-# ActiveRecord::Base.logger = Logger.new(STDOUT) if defined? Rails::Console 
+# ActiveRecord::Base.logger = Logger.new(STDOUT) if defined? Rails::Console
 
 # When you're using Rails 2 console, show queries in the console
 extend_console 'rails2', (ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')), false do
@@ -148,12 +148,12 @@ extend_console 'rails3', defined?(ActiveSupport::Notifications), false do
   $odd_or_even_queries = false
   ActiveSupport::Notifications.subscribe('sql.active_record') do |*args|
     $odd_or_even_queries = !$odd_or_even_queries
-    color = $odd_or_even_queries ? ANSI[:CYAN] : ANSI[:MAGENTA]
+    color = $odd_or_even_queries ? MY_ANSI[:CYAN] : MY_ANSI[:MAGENTA]
     event = ActiveSupport::Notifications::Event.new(*args)
     time  = "%.1fms" % event.duration
     name  = event.payload[:name]
     sql   = event.payload[:sql].gsub("\n", " ").squeeze(" ")
-    puts "  #{ANSI[:UNDERLINE]}#{color}#{name} (#{time})#{ANSI[:RESET]}  #{sql}"
+    puts "  #{MY_ANSI[:UNDERLINE]}#{color}#{name} (#{time})#{MY_ANSI[:RESET]}  #{sql}"
   end
 end
 
