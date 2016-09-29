@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 export VISUAL=subl
 
 ZSH_THEME="zhann"
-plugins=(osx git cp themes)
+plugins=(osx git cp themes npm)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
