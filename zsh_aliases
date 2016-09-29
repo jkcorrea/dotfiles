@@ -1,36 +1,10 @@
-alias o='nemo'
-alias emacs='emacs -nw'
-alias es='sudo /usr/local/elasticsearch/bin/elasticsearch -d'
-alias pycors='python ~/Dropbox/Dev/SimpleCORSServer.py'
-alias csd='cap staging deploy'
-alias cpd='cap production deploy'
-alias rdm='rake db:migrate'
-alias gpl='git pull'
 alias gpom='git pull origin master'
 alias gdt='git difftool'
 
 # Location aliases
-alias elections="cd ~/Dropbox/Work/StuGov/elections"
-alias sg="cd ~/Dropbox/StuGov"
-alias bt="cd ~/Dropbox/StuGov/budgettracker"
-alias si="cd ~/Dropbox/StuGov/stu-inits"
-alias sm="cd ~/Dropbox/StuGov/bridgeapi/ShinyMetalAPI"
-alias 272="cd ~/Dropbox/School/Old/67272"
-alias 475="cd ~/Dropbox/School/67475"
-alias botb="cd ~/Dropbox/BotB"
+
 
 # Misc aliases
-alias ka="killall -9 $"
-alias hk="heroku"
-alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-alias rmdbc="find ./ -path \"*(*'s conflicted copy *\" -exec mv -v {} ~/.local/share/Trash/ \;"
-alias jira="ssh -i \"$HOME/.ssh/jira-aws.pem\" ec2-user@54.88.255.72"
-
-# Test PR branch
-gpr () {
-  git fetch upstream pull/$1/head:pr-$1 && git checkout pr-$1;
-}
 
 # Kill all processes matching
 kl () {
