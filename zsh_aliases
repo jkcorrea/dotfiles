@@ -1,10 +1,13 @@
 alias gpom='git pull origin master'
 alias gdt='git difftool'
+alias gpl='git pull'
 
 # Location aliases
 
-
 # Misc aliases
+function n {
+  $(npm bin)/$@
+}
 
 # Kill all processes matching
 kl () {

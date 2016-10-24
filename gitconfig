@@ -4,16 +4,15 @@
 [push]
 	default = simple
 [core]
-	excludesfile = /home/jkcorrea/.gitignore_global
-	editor = subl -n -w
-[merge]
-  tool = sublimerge
-[mergetool "sublimerge"]
-  cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
-  trustExitCode = false
+	excludesfile = ~/.gitignore_global
+	editor = code --wait
+[gc]
+	auto = 256
+[color]
+	status = always
 [diff]
-  tool = sublimerge
-[difftool "sublimerge"]
-  cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
-[mergetool]
-	keepBackup = false
+	tool = default-difftool
+[difftool "default-difftool"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = default-difftool
