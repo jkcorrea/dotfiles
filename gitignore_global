@@ -2,3 +2,6 @@
 *conflicted copy*
 .DS_Store
 jsconfig.json
+launch.json
+.vscode/
+typings/
