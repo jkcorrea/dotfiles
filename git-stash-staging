@@ -1,0 +1,22 @@
+#!/bin/sh
+
+_stash() {
+  git stash --keep-index
+  git stash save "$1"
+  git stash apply stash@{1}
+  git stash show -p | git apply -R
+  git stash drop stash@{1}
+}
+
+usage() {
+  echo "Stashes only staged changes."
+  echo "usage: git stash-staging [<stash name>]"
+}
+
+if [[ $# == 1 ]]; then
+  _stash "$@" 
+else
+  usage
+  exit 1
+fi
+  
