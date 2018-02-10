@@ -1,4 +1,4 @@
-alias p='python'
+alias py='python -c "import IPython; IPython.terminal.ipapp.launch_new_instance()"'
 alias gpl='git pull'
 alias mks='make serve'
 alias mkgs='./node_modules/.bin/gulp serve -u'
@@ -7,6 +7,8 @@ alias mkgs='./node_modules/.bin/gulp serve -u'
 alias dev='cd ~/dev'
 alias kea='cd ~/dev/kea-magic-dhcpd'
 alias ash='cd ~/dev/Asahi'
+alias slash='cd ~/dev/Asahi/saltstack'
+alias sl='cd ~/dev/Edge/saltstack'
 alias fe='cd ~/dev/frontend'
 alias wv='cd $GOPATH/src/gitlab.sd.apple.com/wonka/wonkavision'
 alias cf='cd ~/dev/ChocolateFactory'
@@ -129,3 +131,4 @@ function req() {
 }
 
 alias bs="venv && work && req"
+alias readlink=greadlink
