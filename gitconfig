@@ -14,3 +14,15 @@
 	tool = default-difftool
 [difftool "default-difftool"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+	get = gerrit get
+	repo = gerrit repo
+	cleanup = gerrit cleanup
+	mail = gerrit mail
+	pending = gerrit pending
+	change = gerrit change
+	sync = gerrit sync
+	gofmt = gerrit gofmt
+	rebase-work = gerrit rebase-work
+	submit = gerrit submit
+	commit = gerrit commit
