@@ -16,6 +16,14 @@ alias cf='cd ~/dev/ChocolateFactory'
 alias scs='cd ~/dev/atsconfig/secrets'
 gocd () { cd `go list -f '{{.Dir}}' $1` }
 
+# Override cd to auto-env
+function cd {
+  builtin cd "$@"
+  if [ -f "Pipfile" ] ; then
+    pipenv shell
+  fi
+}
+
 # Misc aliases
 function n {
   $(npm bin)/$@
