@@ -1,7 +1,3 @@
-export ZSH=$HOME/.oh-my-zsh
-export VISUAL=code
-export EDITOR=code
-
 ZSH_THEME="zhann"
 plugins=(bundler python pip django rails ruby osx git cp themes npm)
 
@@ -13,9 +9,4 @@ source ~/.zsh_aliases
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
-export GOPATH="$HOME/dev/Go"
-export SALTSTACK_PATH="/Users/jkcorrea/dev/Edge/saltstack"
-export PATH="$PATH:$HOME/bin:$GOPATH/bin:$HOME/.rvm/bin:/usr/local/sbin" # Add RVM to PATH for scripting
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-source /usr/local/bin/activate.sh
