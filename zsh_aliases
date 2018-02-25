@@ -19,9 +19,7 @@ gocd () { cd `go list -f '{{.Dir}}' $1` }
 # Override cd to auto-env
 function cd {
   builtin cd "$@"
-  if [ -f "Pipfile" ] ; then
-    pipenv shell
-  fi
+  [ -f "Pipfile" ] && pipenv shell 
 }
 
 # Misc aliases

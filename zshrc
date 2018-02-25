@@ -1,5 +1,5 @@
 ZSH_THEME="zhann"
-plugins=(bundler python pip django rails ruby osx git cp themes npm)
+plugins=(bundler python pip pyenv django rails ruby osx git cp themes npm)
 
 export ZSH=$HOME/.oh-my-zsh
 export VISUAL=code
@@ -19,4 +19,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export SALTSTACK_PATH="/Users/jkcorrea/dev/Edge/saltstack"
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$GOPATH/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/bin"
 
+export PIPENV_VENV_IN_PROJECT=1
 eval "$(pyenv init -)"
