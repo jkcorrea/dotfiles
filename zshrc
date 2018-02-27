@@ -1,6 +1,8 @@
 ZSH_THEME="zhann"
 plugins=(bundler python pip pyenv django rails ruby osx git cp themes npm)
 
+setopt ignoreeof
+
 export ZSH=$HOME/.oh-my-zsh
 export VISUAL=code
 export EDITOR=code
