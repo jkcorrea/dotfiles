@@ -1,5 +1,5 @@
 ZSH_THEME="zhann"
-plugins=(bundler python pip pyenv django rails ruby osx git cp themes npm)
+plugins=(bundler python django rails ruby osx git cp themes npm nvm)
 
 setopt ignoreeof
 
@@ -14,12 +14,12 @@ source ~/.zsh_aliases
 [ -s ${HOME}/.zsh_local ] && source ~/.zsh_local
 
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export SALTSTACK_PATH="/Users/jkcorrea/dev/Edge/saltstack"
-export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$GOPATH/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/bin"
-
-export PIPENV_VENV_IN_PROJECT=1
-eval "$(pyenv init -)"
+export PATH="$HOME/.local/bin:$HOME/bin:$GOPATH/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/bin:$PATH"
+# Add anaconda3 to path
+. /Users/jkcorrea/anaconda3/etc/profile.d/conda.sh
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8

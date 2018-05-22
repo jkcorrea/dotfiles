@@ -1,5 +1,6 @@
 alias py='python -c "import IPython; IPython.terminal.ipapp.launch_new_instance()"'
 alias gpl='git pull'
+alias gdt='git difftool'
 alias mks='make serve'
 alias mkgs='./node_modules/.bin/gulp serve -u'
 
@@ -17,15 +18,10 @@ alias scs='cd ~/dev/atsconfig/secrets'
 gocd () { cd `go list -f '{{.Dir}}' $1` }
 
 # Override cd to auto-env
-function cd {
-  builtin cd "$@"
-  [ -f "Pipfile" ] && pipenv shell 
-}
-
-# Misc aliases
-function n {
-  $(npm bin)/$@
-}
+#function cd {
+#  builtin cd "$@"
+#  [ -f "Pipfile" ] && pipenv shell 
+#}
 
 # Kill all processes matching
 kl () {
