@@ -12,7 +12,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="gemrc gitconfig gitignore_global vimrc vim zshrc zsh_aliases irbrc config"    # list of files/folders to symlink in homedir
+files="gemrc gitconfig gitignore_global vimrc vim zshenv zshrc zsh_aliases irbrc config"    # list of files/folders to symlink in homedir
 
 ########## Special cases
 
@@ -46,7 +46,7 @@ done
 
 install_zsh () {
     # Try to install zsh if it isn't
-    if [ ! $(grep /zsh$ /etc/shells | wc -l) -ge 1 ]; then 
+    if [ ! $(grep /zsh$ /etc/shells | wc -l) -ge 1 ]; then
         # Get machine platform
         platform=$(uname);
         # If the platform is Linux, try an apt-get to install zsh and then recurse

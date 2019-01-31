@@ -13,6 +13,7 @@ alias sl='cd ~/dev/Edge/saltstack'
 alias scs='cd ~/dev/atsconfig/secrets'
 gocd () { cd `go list -f '{{.Dir}}' $1` }
 alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300'
+alias simc='simcloud -c mr2'
 
 # Kill all processes matching
 kl () {
