@@ -4,6 +4,10 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
+### TODO
+### - look into setting up python env (conda, pypsi, etc)
+###
+
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory

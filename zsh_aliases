@@ -5,21 +5,18 @@ alias mkgs='./node_modules/.bin/gulp serve -u'
 
 # Location aliases
 alias dev='cd ~/dev'
-alias kea='cd ~/dev/kea-magic-dhcpd'
 alias ash='cd ~/dev/Asahi'
 alias hops='cd ~/dev/Asahi/HOPS'
 alias slash='cd ~/dev/Asahi/saltstack'
 alias sl='cd ~/dev/Edge/saltstack'
-alias fe='cd ~/dev/frontend'
-alias wv='cd $GOPATH/src/gitlab.sd.apple.com/wonka/wonkavision'
-alias cf='cd ~/dev/ChocolateFactory'
 alias scs='cd ~/dev/atsconfig/secrets'
 gocd () { cd `go list -f '{{.Dir}}' $1` }
+alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300'
 
 # Override cd to auto-env
 function cd {
   builtin cd "$@"
-  [ -f "Pipfile" ] && pipenv shell 
+  [ -f "Pipfile" ] && pipenv shell
 }
 
 # Misc aliases

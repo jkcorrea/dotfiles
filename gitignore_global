@@ -5,3 +5,4 @@ jsconfig.json
 launch.json
 .vscode/
 typings/
+.cenv
