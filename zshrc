@@ -4,7 +4,7 @@ export EDITOR=code
 export GOPATH="$HOME/dev/Go"
 
 ZSH_THEME="zhann"
-plugins=(bundler python pip pyenv django rails ruby osx git cp themes npm zsh-autosuggestions autoswitch_conda)
+plugins=(bundler python pip pyenv django rails ruby osx git cp themes npm nvm zsh-autosuggestions autoswitch_conda)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
@@ -13,7 +13,6 @@ source ~/.zsh_aliases
 
 # Setup NVM
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -23,4 +22,3 @@ export AUTOSWITCH_DEFAULT_CONDAENV=base # Autoswitch plugin default to base env
 
 export SALTSTACK_PATH="/Users/jkcorrea/dev/Edge/saltstack"
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$GOPATH/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/bin:$HOME/.local/bin"
-
