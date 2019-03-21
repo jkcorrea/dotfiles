@@ -1,19 +1,13 @@
-alias py='python -c "import IPython; IPython.terminal.ipapp.launch_new_instance()"'
-alias gpl='git pull'
 alias gdt='git difftool'
-alias mks='make serve'
-alias mkgs='./node_modules/.bin/gulp serve -u'
+alias gpl='git pull'
+alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300'
+alias simc='simcloud -c mr2'
 
 # Location aliases
 alias dev='cd ~/dev'
-alias ash='cd ~/dev/Asahi'
-alias hops='cd ~/dev/Asahi/HOPS'
-alias slash='cd ~/dev/Asahi/saltstack'
+alias edge='cd ~/dev/Edge'
 alias sl='cd ~/dev/Edge/saltstack'
-alias scs='cd ~/dev/atsconfig/secrets'
 gocd () { cd `go list -f '{{.Dir}}' $1` }
-alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300'
-alias simc='simcloud -c mr2'
 
 # Kill all processes matching
 kl () {
