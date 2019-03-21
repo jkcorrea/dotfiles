@@ -12,7 +12,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="gemrc gitconfig gitignore_global vimrc vim zshenv zshrc zsh_aliases irbrc config"    # list of files/folders to symlink in homedir
+files="gemrc gitconfig gitignore_global vimrc vim zshenv zshrc zsh_aliases irbrc config chunkwmrc"    # list of files/folders to symlink in homedir
 
 ########## Special cases
 
