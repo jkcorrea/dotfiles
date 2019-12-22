@@ -37,17 +37,23 @@ antigen bundle heroku
 antigen bundle django
 antigen bundle rails
 antigen bundle ruby
+antigen bundle gem
+antigen bundle rake
 antigen bundle osx
 antigen bundle git
+antigen bundle ls
 antigen bundle cp
 antigen bundle npm
 antigen bundle nvm
+antigen bundle node
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle zsh-autosuggestions
 antigen bundle autoswitch_conda
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+
 
 # Load the theme.
 antigen theme denysdovhan/spaceship-prompt
