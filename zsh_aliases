@@ -1,36 +1,11 @@
 alias gdt='git difftool'
 alias gpl='git pull'
-alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300'
-alias simc='simcloud -c mr2'
 
 # Location aliases
 alias dev='cd ~/dev'
-alias edge='cd ~/dev/Edge'
-alias sl='cd ~/dev/Edge/saltstack'
 gocd () { cd `go list -f '{{.Dir}}' $1` }
 
 # Kill all processes matching
 kl () {
   kill `ps aux | grep "[${1:0:1}]${1:1}" | awk '{print $2}'`
 }
-
-# APPLE NEED TO KNOW CONFIDENTIAL.
-# Copyright © Apple Inc. All rights reserved.
-food() {
-  cafes=(06 08 15 20 22 23 25 31 32 37 43) # should be all the California Caffe Macs
-  echo "Where can I haz $1 today?"
-  choices=0
-  for i in "${cafes[@]}"
-  do
-      menu=$(curl -s http://food.apple.com/menu/choosemenu.php?location=L0000"$i")
-      count=$(grep -ci "$1" <<< "$menu")
-      if (( count > 0 )); then
-          echo "You could go to: $(grep location <<< "$menu"|cut -f2 -d'>'|cut -f1 -d'<')"
-          let choices++
-      fi
-  done
-  if (( choices == 0 )); then
-      echo "You cannot haz $1 today😭."
-  fi
-}
-

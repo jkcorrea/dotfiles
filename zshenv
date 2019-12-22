@@ -1,1 +1,1 @@
-source ${HOME}/miniconda3/etc/profile.d/conda.sh
+source ${HOME}/opt/miniconda3/etc/profile.d/conda.sh

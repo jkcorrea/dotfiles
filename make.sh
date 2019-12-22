@@ -74,6 +74,7 @@ install_zsh () {
     # Install oh-my-zsh
     if [[ ! -d $dir/.oh-my-zsh/ ]]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        brew install antigen
     fi
 
     # Set the default shell to zsh if it isn't currently set to zsh
