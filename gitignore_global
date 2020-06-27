@@ -1,8 +1,6 @@
 .fuse_hidden*
 *conflicted copy*
 .DS_Store
-jsconfig.json
-launch.json
-.vscode/
-typings/
+.vscode
 .cenv
+

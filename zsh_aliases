@@ -1,5 +1,8 @@
 alias gdt='git difftool'
 alias gpl='git pull'
+alias rce='EDITOR="code --wait" rails credentials:edit'
+alias sdm='npx sequelize-cli db:migrate'
+alias smc='npx sequelize-cli migration:create --name'
 
 # Location aliases
 alias dev='cd ~/dev'
@@ -9,3 +12,5 @@ gocd () { cd `go list -f '{{.Dir}}' $1` }
 kl () {
   kill `ps aux | grep "[${1:0:1}]${1:1}" | awk '{print $2}'`
 }
+
+rcr () { EDITOR="code --wait" rails credentials:$1 }

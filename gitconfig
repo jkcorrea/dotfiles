@@ -1,10 +1,11 @@
 [user]
-	email = jacob_correa@apple.com
+	email = jcorrea257@gmail.com
 	name = Jake Correa
+	signingkey = 42F322AA038B33DC
 [push]
 	default = simple
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/jkcorrea/.gitignore_global
 	editor = code --wait
 [gc]
 	auto = 256
@@ -26,3 +27,10 @@
 	rebase-work = gerrit rebase-work
 	submit = gerrit submit
 	commit = gerrit commit
+[gpg]
+	program = /usr/local/bin/gpg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
