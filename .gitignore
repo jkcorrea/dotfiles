@@ -1,0 +1,7 @@
+.zsh_local
+.DS_Store
+*.log
+*.swp
+*.socket
+*.lock
+*.pid

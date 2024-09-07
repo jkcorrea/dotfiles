@@ -1,0 +1,5 @@
+.fuse_hidden*
+*conflicted copy*
+.DS_Store
+.cenv
+.tool-versions

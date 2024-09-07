@@ -1,0 +1,39 @@
+# fzf settings. Uses sharkdp/fd for a faster alternative to `find`.
+# Load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Use fzf/fd (https://github.com/sharkdp/fd) instead of the default find command for listing path candidates.
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Use fd to generate the list for directory completion
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
+
+# Key bindings for command-line fuzzy completion
+bindkey '^T' fzf-completion
+bindkey '^I' fzf-completion
+
+# Options for fzf-history-widget
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
+# Override the default 'find' command with a custom function
+find() {
+  command find "$@"
+  echo ""
+  echo "========================================================================="
+  echo "NOTE: Consider using fzf for an interactive file search experience!"
+  echo "Usage:"
+  echo "  CTRL+T : Paste the selected files and directories onto the command-line"
+  echo "  ALT+C  : cd into the selected directory"
+  echo "  CTRL+R : Search command history"
+  echo ""
+  echo "Falling back to the standard 'find' command..."
+  echo "========================================================================="
+}
+## end fzf

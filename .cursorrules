@@ -1,0 +1,25 @@
+This is a collection of dotfiles for setting up my system.
+I only use MacOS and ZSH so we don't have to worry about cross-platform support.
+
+TODO
+- "setup script" for re-installing all dependencies and symlinking the proper files into HOME on a new system
+
+# File Organization
+- Organize dotfiles into different files based on their category
+- Use consistent naming conventions for files and directories
+
+# Security
+- Avoid committing sensitive information (e.g., API keys, passwords)
+- Use environment variables or separate, non-tracked files for sensitive data
+
+# Documentation
+- Maintain a README.md file with setup instructions and file descriptions
+- Comment complex configurations or scripts within the dotfiles
+
+# Modularity
+- Break down large configuration files into smaller, more manageable pieces
+- Use source or include statements to combine modular configs
+
+# Automation
+- Create scripts for easy installation and updates of dotfiles
+- Use tools like GNU Stow or custom scripts for managing symlinks
