@@ -1,8 +1,13 @@
-alias reload='source $HOME/.zshrc'
-alias rl='reload'
 alias grep='grep --color=auto'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+unalias reload 2>/dev/null
+reload() {
+	source "$HOME/.zshrc"
+	echo "ZSH config reloaded!"
+}
+alias rl='reload'
 
 # Git
 alias gdt='git difftool'

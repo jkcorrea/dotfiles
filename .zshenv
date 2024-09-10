@@ -20,6 +20,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # sst
 export PATH="$PATH:$HOME/.sst/bin"
+# misc
+export PATH="$PATH:$HOME/.local/bin"
 
 # zplug
 export ZPLUG_HOME=/opt/homebrew/opt/zplug

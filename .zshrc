@@ -6,6 +6,34 @@ setopt HIST_IGNORE_ALL_DUPS
 [ -s ${HOME}/.zsh_aliases ] && source ~/.zsh_aliases
 [ -s ${HOME}/.zsh_fzf ] && source ~/.zsh_fzf
 
+# Load Antigen
+source $(brew --prefix)/share/antigen/antigen.zsh
+antigen bundle ohmyzsh/ohmyzsh path:plugins/git
+antigen bundle ohmyzsh/ohmyzsh path:plugins/httpie
+# antigen bundle hadenlabs/zsh-starship
+# antigen bundle docker # TODO wasnt working.
+antigen bundle docker-compose
+antigen bundle zpm-zsh/ls
+antigen bundle Aloxaf/fzf-tab
+antigen bundle woefe/wbase.zsh
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
+antigen bundle zdharma-continuum/fast-syntax-highlighting
+# Tell Antigen that you're done
+antigen apply
+
+# Keybindings for substring search plugin. Maps up and down arrows.
+bindkey -M main '^[OA' history-substring-search-up
+bindkey -M main '^[OB' history-substring-search-down
+bindkey -M main '^[[A' history-substring-search-up
+bindkey -M main '^[[B' history-substring-search-down
+
+# Keybindings for autosuggestions plugin
+bindkey '^ ' autosuggest-accept
+bindkey '^f' autosuggest-accept
+
 # Load asdf (cache for perf)
 if [ -f ~/.asdf_brew_cache ]; then
   source ~/.asdf_brew_cache
@@ -18,53 +46,10 @@ else
   fi
 fi
 
-# Keybindings for substring search plugin. Maps up and down arrows.
-bindkey -M main '^[OA' history-substring-search-up
-bindkey -M main '^[OB' history-substring-search-down
-bindkey -M main '^[[A' history-substring-search-up
-bindkey -M main '^[[B' history-substring-search-down
-
-# Keybindings for autosuggestions plugin
-bindkey '^ ' autosuggest-accept
-bindkey '^f' autosuggest-accept
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
-# TODO - which can we lazy load?
-# Plugins!
-source $ZPLUG_HOME/init.zsh
-zplug "zpm-zsh/ls"
-zplug "woefe/wbase.zsh"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-history-substring-search", defer:3
-zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
-zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
-zplug "plugins/git", from:oh-my-zsh, lazy:true
-zplug "plugins/httpie", from:oh-my-zsh, lazy:true
-zplug "plugins/docker", from:oh-my-zsh, lazy:true
-zplug "plugins/docker-compose", from:oh-my-zsh, lazy:true
-# zplug "woefe/git-prompt.zsh", use:"{git-prompt.zsh,examples/wprompt.zsh}"
-# zplug "b4b4r07/enhancd"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo
-    zplug install
-  fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
-
 # bun completions
 [ -s "/Users/jkcorrea/.bun/_bun" ] && source "/Users/jkcorrea/.bun/_bun"
 
 # PUT THESE LAST
 eval "$(zoxide init zsh)"
-# # Enable Starship prompt https://starship.rs/guide/#🚀-installation
+# Enable Starship prompt https://starship.rs/guide/#🚀-installation
 eval "$(starship init zsh)"

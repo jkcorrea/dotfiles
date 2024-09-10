@@ -1,4 +1,10 @@
 # fzf settings. Uses sharkdp/fd for a faster alternative to `find`.
+# Check if fzf is installed but not initialized
+if [ -d "$(brew --prefix)/opt/fzf" ] && [ ! -f ~/.fzf.zsh ]; then
+  echo "fzf not initialized!"
+  echo "Please run: $(brew --prefix)/opt/fzf/install"
+fi
+
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -22,7 +28,7 @@ bindkey '^I' fzf-completion
 # Options for fzf-history-widget
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
-# Override the default 'find' command with a custom function
+# # Override the default 'find' command with a custom function
 find() {
   command find "$@"
   echo ""
@@ -36,4 +42,3 @@ find() {
   echo "Falling back to the standard 'find' command..."
   echo "========================================================================="
 }
-## end fzf
