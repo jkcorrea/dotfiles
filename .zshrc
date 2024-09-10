@@ -8,19 +8,20 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Load Antigen
 source $(brew --prefix)/share/antigen/antigen.zsh
-antigen bundle ohmyzsh/ohmyzsh path:plugins/git
-antigen bundle ohmyzsh/ohmyzsh path:plugins/httpie
-# antigen bundle hadenlabs/zsh-starship
-# antigen bundle docker # TODO wasnt working.
-antigen bundle docker-compose
-antigen bundle zpm-zsh/ls
-antigen bundle Aloxaf/fzf-tab
-antigen bundle woefe/wbase.zsh
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
-antigen bundle zdharma-continuum/fast-syntax-highlighting
+antigen bundles <<EOBUNDLES
+  robbyrussell/oh-my-zsh plugins/git
+  robbyrussell/oh-my-zsh plugins/httpie
+  # docker # TODO wasnt working.
+  docker-compose
+  zpm-zsh/ls
+  Aloxaf/fzf-tab
+  woefe/wbase.zsh
+  zsh-users/zsh-completions
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-history-substring-search
+  MichaelAquilina/zsh-autoswitch-virtualenv
+  zdharma-continuum/fast-syntax-highlighting
+EOBUNDLES
 # Tell Antigen that you're done
 antigen apply
 
